@@ -6,11 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.fragments.MainAction
+import com.example.fragments.MainViewModel
 import com.example.fragments.R
 import com.example.fragments.databinding.FragmentListBinding
 import com.example.fragments.room.Note
@@ -19,6 +22,7 @@ import kotlinx.coroutines.launch
 
 class ListFragment : Fragment() {
     private val viewModel by viewModels<NotesViewModel>()
+    private val activityViewModel by activityViewModels<MainViewModel> ()
     private lateinit var binding: FragmentListBinding
     private val context
         get() = requireActivity()
@@ -53,11 +57,11 @@ class ListFragment : Fragment() {
                 }
 
                 override fun onEdit(noteId: Long) {
-                    // its for next homework
+                    activityViewModel.makeAction(MainAction.ShowDetailsFragment(noteId))
                 }
 
                 override fun onDelete(note: Note) {
-                    // its for next homework
+                    viewModel.deleteNote(note)
                 }
             }
             val notesAdapter = NotesAdapter(actions)

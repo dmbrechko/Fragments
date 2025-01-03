@@ -36,7 +36,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/deleteIV"
         app:layout_constraintVertical_bias="0"
-        android:visibility="invisible"
         app:srcCompat="@drawable/ic_edit_30" />
 
     <ImageView
@@ -48,7 +47,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editIV"
         app:layout_constraintVertical_bias="1"
-        android:visibility="invisible"
         app:srcCompat="@drawable/ic_delete_30" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

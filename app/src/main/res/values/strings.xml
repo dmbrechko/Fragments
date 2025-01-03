@@ -7,4 +7,6 @@
     <string name="save_note">Save note</string>
     <string name="enter_note_text_please">Enter note text please</string>
     <string name="exit">Exit</string>
+    <string name="error_loading">Error loading</string>
+    <string name="details_title">Edit note</string>
 </resources>
