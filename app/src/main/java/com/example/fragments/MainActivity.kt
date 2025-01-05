@@ -48,11 +48,7 @@ class MainActivity : AppCompatActivity() {
                                 }
                             }
                             MainAction.RemoveDetailsFragment -> {
-                                supportFragmentManager.commit {
-                                    supportFragmentManager.findFragmentByTag(DETAILS_TAG)?.let {
-                                        remove(it)
-                                    }
-                                }
+                                supportFragmentManager.popBackStack()
                             }
                         }
                     }
